@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sehome Phone Use Petition</title>
+  <meta name="description" content="A student petition urging Sehome administrators and teachers to crack down on phone use in school.">
+  <link rel="icon" href="images/sehome-logo.png">
+  <style>
+    
+    :root{
+      --bg: #0b0c10;         
+      --panel: #111318;      
+      --panel-2: #0e1014;    
+      --txt: #e9eef4;        
+      --muted: #b7c0cd;      
+      --brand: #2ecc71;      
+      --brand-2: #24b863;    
+      --accent: #00bcd4;     
+      --warn: #ff3b30;       
+      --border: #1f2430;     
+      color-scheme: dark light;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f9fc;
+        --panel: #ffffff;
+        --panel-2: #f3f6fb;
+        --txt: #0f172a;
+        --muted: #4b5563;
+        --brand: #137a43;
+        --brand-2: #0f6939;
+        --accent: #0ea5e9;
+        --warn: #b91c1c;
+        --border: #e5e7eb;
+      }
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin-inline:auto;padding:clamp(16px,2vw,32px)}
+    .grid{display:grid;gap:clamp(16px,2.2vw,28px)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(16px,2.2vw,28px);align-items:center}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, var(--panel), var(--panel-2));border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.2);overflow:hidden}
+    .pad{padding:clamp(16px,2vw,28px)}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-weight:600;color:var(--muted);letter-spacing:.3px}
+    .title{font-size:clamp(28px,4.2vw,42px);line-height:1.15;margin:10px 0 8px}
+    .subtitle{font-size:clamp(16px,2.2vw,18px);color:var(--muted);margin:0}
+
+    
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab, var(--bg) 80%, transparent);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .brand img{width:34px;height:34px;border-radius:8px;object-fit:contain;background:var(--panel);border:1px solid var(--border)}
+
+    
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+    .stat{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+    .stat b{display:block;font-size:22px}
+    .stat small{color:var(--muted)}
+
+    
+    form{display:grid;gap:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+    label{font-weight:600;font-size:14px}
+    input,textarea,button{font:inherit}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--panel-2);color:var(--txt);outline:none}
+    textarea{min-height:120px;resize:vertical}
+    input:focus,textarea:focus{border-color:color-mix(in oklab, var(--accent) 60%, var(--border))}
+    .hint{color:var(--muted);font-size:13px}
+    .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid transparent;background:var(--brand);color:white;font-weight:700;cursor:pointer}
+    .btn:hover{background:var(--brand-2)}
+    .btn.secondary{background:transparent;color:var(--txt);border-color:var(--border)}
+
+    
+    .media{display:grid;gap:12px}
+    .media .frame{aspect-ratio:16/10;background:var(--panel);border:1px dashed var(--border);border-radius:16px;display:grid;place-items:center;color:var(--muted)}
+    .media img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+
+    
+    .alert{border-radius:14px;padding:14px 16px;border:1px solid var(--border)}
+    .alert.success{background:color-mix(in oklab, var(--brand) 8%, var(--panel));border-color:color-mix(in oklab, var(--brand) 30%, var(--border))}
+    .alert.info{background:color-mix(in oklab, var(--accent) 8%, var(--panel));border-color:color-mix(in oklab, var(--accent) 30%, var(--border))}
+    .alert.warn{background:color-mix(in oklab, var(--warn) 10%, var(--panel));border-color:color-mix(in oklab, var(--warn) 40%, var(--border));color:#fff}
+
+    footer{margin-top:48px;padding:24px 0;border-top:1px solid var(--border);color:var(--muted)}
+    .sponsor{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .form-wrap{position:relative}.form-overlay{position:absolute;inset:0;display:grid;place-items:center;background:color-mix(in oklab, var(--bg) 55%, transparent);backdrop-filter:blur(2px);border-radius:12px;opacity:0;pointer-events:none;transition:opacity .28s ease}.form-overlay.show{opacity:1;pointer-events:auto}.form-overlay .box{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Site brand">
+        <img src="images/sehome-logo.png" alt="Sehome High logo" />
+        <span>Sehome Phone Use Petition</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#petition">Sign</a>
+        <span aria-hidden>•</span>
+        <a href="#learn-more">Why it matters</a>
+      </nav>
+    </div>
+  </header>
+
+  <noscript>
+    <div class="container" style="margin-top:16px">
+      <div class="alert warn" role="alert">
+        <strong>JavaScript required:</strong> It enables the on-page confirmation after submitting. You can still use the form below.
+      </div>
+    </div>
+  </noscript>
+
+  <main class="container" id="top">
+    <section class="hero">
+      <div class="card pad">
+        <span class="tag">Student PSA • Petition</span>
+        <h1 class="title">Sign the petition to tell Sehome administrators and teachers to crack down more on phone use</h1>
+        <p class="subtitle">Phone use at Sehome is still a rampant issue — despite phones being banned during class time. It disrupts learning in class and spills into hallways and common areas. This petition aims to change that.</p>
+        
+
+        <div class="grid" style="margin-top:12px">
+          <div class="stats" aria-live="polite">
+            <div class="stat"><b>Class of 2025</b><small>Sehome High School</small></div>
+            <div class="stat"><b>Sponsored</b><small>by Jamisen Renod</small></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="media">
+        <div class="frame">
+          <img src="images/students-on-phones.jpg" alt="Students on their phones">
+        </div>
+        <div class="frame">
+          <img src="images/sehome-building.jpg" alt="Sehome High School building">
+        </div>
+        <small class="hint" style="margin-left:4px">Photo credit: <a href="https://www.bellinghamherald.com/news/local/article225361140.html" target="_blank" rel="noopener">The Bellingham Herald</a></small>
+      </aside>
+    </section>
+
+    <section id="petition" class="grid" style="margin-top:20px">
+      <div class="card pad">
+        <h2 style="margin:0 0 8px">Add your name</h2>
+        <p class="hint">Fields marked * are required.</p>
+
+        <div class="form-wrap"><form id="petitionForm" action="#noscript" method="post" novalidate>
+          <div class="row">
+            <div>
+              <label for="first">First Name *</label>
+              <input id="first" name="first" autocomplete="given-name" required placeholder="e.g., Alex" />
+            </div>
+            <div>
+              <label for="last">Last Name *</label>
+              <input id="last" name="last" autocomplete="family-name" required placeholder="e.g., Rivera" />
+            </div>
+          </div>
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="impact">Optional impact statement</label>
+            <textarea id="impact" name="impact" placeholder="In your words, how does phone use affect learning? (Optional)"></textarea>
+            <p class="hint">Keep it respectful and on-topic.</p>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit" id="submitBtn">Send</button>
+            <button class="btn secondary" type="reset">Clear</button>
+          </div>
+
+          <div id="formMsg" class="alert info" style="display:none;margin-top:12px" role="status" aria-live="polite"></div>
+        </form><div class="form-overlay" id="formOverlay" aria-hidden="true"><div class="box">Submission received ✔</div></div></div>
+      </div>
+
+      <div class="card pad">
+        <h3 id="learn-more" style="margin-top:0">Why this matters</h3>
+        <ul>
+          <li>Phone use during class reduces focus and undermines our school`s policy.</li>
+          <li>Clear expectations and consistent enforcement help everyone learn better.</li>
+          <li>We`re asking for clear rules and consistent <strong>in-class phone confiscation</strong> when phones are used during instruction, with return at day`s end, and firmer consequences for repeat violations.</li>
+        </ul>
+        
+      </div>
+    </section>
+
+    
+
+    <footer>
+      <div class="sponsor">
+        <img src="images/sehome-logo.png" alt="Sehome logo" width="28" height="28" style="border-radius:6px;border:1px solid var(--border);background:var(--panel)">
+        <span>Sponsored by <strong>Jamisen Renod</strong></span>
+      </div>
+      <div class="hint" style="margin-top:8px">This page was created for a class project (mock). Submissions are not stored or sent.</div>
+    </footer>
+  </main>
+
+  <script>
+
+    (function(){
+      const $ = (sel, el=document) => el.querySelector(sel);
+      const form = $('#petitionForm');
+      const msg = $('#formMsg');
+      const btn = $('#submitBtn');
+      const overlay = $('#formOverlay');
+
+      function showError(input, text){
+        input.setAttribute('aria-invalid','true');
+        input.style.borderColor = 'color-mix(in oklab, var(--warn) 60%, var(--border))';
+        input.nextElementSibling?.classList?.add('error');
+        if(text){
+          let hint = input.parentElement.querySelector('.field-error');
+          if(!hint){
+            hint = document.createElement('div');
+            hint.className = 'field-error hint';
+            input.parentElement.appendChild(hint);
+          }
+          hint.textContent = text;
+        }
+      }
+      function clearError(input){
+        input.removeAttribute('aria-invalid');
+        input.style.borderColor = '';
+        const hint = input.parentElement.querySelector('.field-error');
+        if(hint) hint.remove();
+      }
+
+      ['first','last','email'].forEach(id=>{
+        const el = document.getElementById(id);
+        el.addEventListener('input', ()=> clearError(el));
+      });
+
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        msg.style.display = 'none';
+
+        const first = $('#first');
+        const last = $('#last');
+        const email = $('#email');
+
+        let ok = true;
+        if(!first.value.trim()){ ok=false; showError(first,'Please enter your first name.'); }
+        if(!last.value.trim()){ ok=false; showError(last,'Please enter your last name.'); }
+        if(!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ ok=false; showError(email,'Please enter a valid email.'); }
+        if(!ok){ return; }
+
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        setTimeout(()=>{
+
+          $('#first').value='';
+          $('#last').value='';
+          $('#email').value='';
+
+          overlay.classList.add('show');
+          overlay.setAttribute('aria-hidden','false');
+          form.querySelectorAll('input, textarea, button').forEach(el=>el.disabled=true);
+          btn.textContent = 'Sent';
+        }, 700);
+      });
+    })();
+  </script>
+</body>
+</html>
